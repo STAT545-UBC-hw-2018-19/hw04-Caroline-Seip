@@ -3,11 +3,27 @@ hw04CarolineSeip
 Caroline Seip
 October 3, 2018
 
+This is Caroline Seip's Assignment 4 for UBC STAT545A. It includes an exploration of reshaping data using the gapminder package, and of joining and merging two dataframes.
+
 Table of Contents
 =================
 
-Data reshaping: Activity \#2
-============================
+-   Data reshaping
+    -   Load packages
+    -   Make a tidy table
+    -   Make an untidy table
+    -   Make a scatterplot
+-   Joining and merging
+    -   Create data frames
+    -   Joining
+        -   Left join
+        -   Right join
+        -   Inner join
+        -   Full join
+    -   Merging
+
+Data reshaping: Activity 2
+==========================
 
 **The prompt I have chosen to explore is Activity 2:**
 
@@ -138,8 +154,8 @@ OceaniaLifeExp %>%
 
 ![](hw04CarolineSeip_files/figure-markdown_github/unnamed-chunk-4-1.png)
 
-Part 2: Activity 2
-==================
+Joining and merging: Activity 2
+===============================
 
 Create data frames
 ------------------
@@ -205,7 +221,9 @@ Keeps the data on the left side of the function.
 A left join will join matching rows from `UrsusSpeciesMeanings` to `CanadianBears`, using the matching `Species` variable:
 
 ``` r
+#Put the dataframe on the left that you want to retain
 left_join(CanadianBears, UrsusSpeciesMeanings) %>% 
+  #Make the output table pretty with the kable function
   kable()
 ```
 
@@ -223,10 +241,12 @@ Only species meanings with a matching Canadian bear are shown.
 
 Keeps the data on the right side of the function.
 
-A right join will joing matching rows from `CanadianBears` to `UrsusSpeciesMeanings`:
+A right join will join matching rows from `CanadianBears` to `UrsusSpeciesMeanings`:
 
 ``` r
+#Put the dataframe on the right that you want to retain
 right_join(CanadianBears, UrsusSpeciesMeanings) %>% 
+  #Make the output table pretty with the kable function
   kable()
 ```
 
@@ -246,7 +266,9 @@ No matching Canadian bears value for Tibetan bear, therefore shows NA.
 Keeps only data that has both left and right values:
 
 ``` r
+#Order datasets in the way that you want them to appear
 inner_join(CanadianBears, UrsusSpeciesMeanings) %>% 
+  #Make the output table pretty with the kable function
   kable()
 ```
 
@@ -265,7 +287,9 @@ Tibetan bear data is lost because there is no match in Canadian bears dataset.
 Keeps all the data, even if it doesn't have a match:
 
 ``` r
+#Order datasets in the way that you want them to appear
 full_join(CanadianBears, UrsusSpeciesMeanings) %>% 
+  #Make the output table pretty with the kable function
   kable()
 ```
 
@@ -283,10 +307,11 @@ Tibetan bear data is retained even though it doesn't have a Canadian bear match.
 Merging
 -------
 
-`Merge` is a base R function that joins two data frames by their common columns names.
+`Merge` is a base R function that joins two data frames by their common column names.
 
 ``` r
 merge(CanadianBears, UrsusSpeciesMeanings) %>% 
+  #Make the output table pretty with the kable function
   kable()
 ```
 
