@@ -6,7 +6,11 @@ October 3, 2018
 Table of Contents
 =================
 
--   Part 1: Activity \#2
+-   Header
+-   Sub-header
+
+-   Part 1: Activity
+-   One
 -   Load packages
 -   Make a tidy table
 -   Make an untidy table
@@ -198,13 +202,15 @@ UrsusSpeciesMeanings %>%
   kable()
 ```
 
-| Species     | Meaning  |
-|:------------|:---------|
-| Arctos      | Northern |
-| Americanus  | American |
-| Maritimus   | Coastal  |
-| Thibetanus  | Tibetan  |
-| \#\#Joining |          |
+| Species    | Meaning  |
+|:-----------|:---------|
+| Arctos     | Northern |
+| Americanus | American |
+| Maritimus  | Coastal  |
+| Thibetanus | Tibetan  |
+
+Joining
+-------
 
 `Join` is a `dplyr` function that joins datasets by matching common variables between the datasets.
 
@@ -212,7 +218,7 @@ UrsusSpeciesMeanings %>%
 
 Keeps the data on the left side of the function.
 
-A left join will join matching rows **from** `UrsusSpeciesMeanings' **to**`CanadianBears`, using the matching`Species\` variable:
+A left join will join matching rows from `UrsusSpeciesMeanings` to `CanadianBears`, using the matching `Species` variable:
 
 ``` r
 left_join(CanadianBears, UrsusSpeciesMeanings) %>% 
@@ -233,7 +239,7 @@ Only species meanings with a matching Canadian bear are shown.
 
 Keeps the data on the right side of the function.
 
-A right join will joing matching rows **from** `CanadianBears` **to** `UrsusSpeciesMeanings`:
+A right join will joing matching rows from `CanadianBears` to `UrsusSpeciesMeanings`:
 
 ``` r
 right_join(CanadianBears, UrsusSpeciesMeanings) %>% 
@@ -288,7 +294,7 @@ full_join(CanadianBears, UrsusSpeciesMeanings) %>%
 | Polar bear   | Ursus | Maritimus  | Coastal  |
 | NA           | NA    | Thibetanus | Tibetan  |
 
-Tibetan bear data is retained even though it doesn't have a left match.
+Tibetan bear data is retained even though it doesn't have a Canadian bear match.
 
 Merging
 -------

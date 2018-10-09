@@ -5,17 +5,23 @@ date: "October 3, 2018"
 output: github_document
 ---
 #Table of Contents
-- Part 1: Activity #2
-  - Load packages
-  - Make a tidy table
-  - Make an untidy table
-  - Make a scatterplot
+
+* Header
+  + Sub-header
+
+
+* Part 1: Activity 
+  + One
+  + Load packages
+  + Make a tidy table
+  + Make an untidy table
+  + Make a scatterplot
 - Part 2: Activity #2
-  - Create data frames
-  - Left join
-  - Right join
-  - Inner join
-  - Full join
+  -   Create data frames
+  -   Left join
+  -   Right join
+  -   Inner join
+  -   Full join
 
 #Data reshaping: Activity #2
 
@@ -124,6 +130,7 @@ UrsusSpeciesMeanings <- read_csv(UrsusSpeciesMeanings, skip = 1)
 UrsusSpeciesMeanings %>% 
   kable()
 ```
+
 ##Joining
 
 `Join` is a `dplyr` function that joins datasets by matching common variables between the datasets.
@@ -132,7 +139,7 @@ UrsusSpeciesMeanings %>%
 
 Keeps the data on the left side of the function.
 
-A left join will join matching rows **from** `UrsusSpeciesMeanings' **to** `CanadianBears`, using the matching `Species` variable:
+A left join will join matching rows from `UrsusSpeciesMeanings` to `CanadianBears`, using the matching `Species` variable:
 
 ```{r}
 left_join(CanadianBears, UrsusSpeciesMeanings) %>% 
@@ -145,7 +152,7 @@ Only species meanings with a matching Canadian bear are shown.
 
 Keeps the data on the right side of the function.
 
-A right join will joing matching rows **from** `CanadianBears` **to** `UrsusSpeciesMeanings`:
+A right join will joing matching rows from `CanadianBears` to `UrsusSpeciesMeanings`:
 
 ```{r}
 right_join(CanadianBears, UrsusSpeciesMeanings) %>% 
@@ -174,7 +181,7 @@ full_join(CanadianBears, UrsusSpeciesMeanings) %>%
   kable()
 ```
 
-Tibetan bear data is retained even though it doesn't have a left match.
+Tibetan bear data is retained even though it doesn't have a Canadian bear match.
 
 ##Merging
 
