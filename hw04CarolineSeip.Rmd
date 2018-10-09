@@ -4,3 +4,38 @@ author: "Caroline Seip"
 date: "October 3, 2018"
 output: github_document
 ---
+#Table of Contents
+- Data reshaping: Activity #2
+- 
+
+#Data reshaping: Activity #2
+
+Make a tibble with one row per year and columns for life expectancy for two or more countries.
+- Use knitr::kable() to make this table look pretty in your rendered homework.
+- Take advantage of this new data shape to scatterplot life expectancy for one country against that of another.
+
+First let's load the dataset, tidyverse and knitr:
+
+```{r}
+#Load gapminder dataset
+library(gapminder)
+#Load tidyverse to use dplyr and ggplot
+library(tidyverse)
+#Load knitr to use the kable function
+library(knitr)
+```
+
+Now let's make a formatted table of life expectancy for each year in Australia and New Zealand:
+
+```{r}
+#Use the gapminder dataset
+gapminder %>%
+  #Filter so that we are only using Oceania (Australia and New Zealand)
+  filter(continent=="Oceania") %>% 
+  #Select the columns country, year and life expectancy
+  select(country, year, lifeExp) %>% 
+  #Make a table, rename column headings
+  kable(col.names = c("Country", "Year", "Life expectancy (years)"))
+```
+
+
