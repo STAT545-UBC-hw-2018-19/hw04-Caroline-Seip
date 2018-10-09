@@ -6,23 +6,6 @@ output: github_document
 ---
 #Table of Contents
 
-* Header
-  + Sub-header
-
-
-* Part 1: Activity 
-  + One
-  + Load packages
-  + Make a tidy table
-  + Make an untidy table
-  + Make a scatterplot
-- Part 2: Activity #2
-  -   Create data frames
-  -   Left join
-  -   Right join
-  -   Inner join
-  -   Full join
-
 #Data reshaping: Activity #2
 
 **The prompt I have chosen to explore is Activity 2:**
